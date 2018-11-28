@@ -1,0 +1,2 @@
+module SpamTypesHelper
+end

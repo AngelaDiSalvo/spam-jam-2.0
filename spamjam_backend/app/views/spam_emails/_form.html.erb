@@ -1,0 +1,70 @@
+<div class="row">
+
+  <div class="col-6">
+  </div>
+
+  <div class="col-5">
+    <div class="container bg-transparent border-none" align="CENTER">
+      <div class="card-body">
+        <div class="card bg-danger mb-3">
+            <div class="card-body" align="CENTER">
+              <div class="container bg-transparent border-none">
+                <h2>Form</h2>
+
+                <%= form_with(model: spam_email, local: true, :html => {:class => "form-horizontal center"}) do |form| %>
+                  <% if spam_email.errors.any? %>
+                    <div id="error_explanation">
+                      <h2><%= pluralize(spam_email.errors.count, "error") %> prohibited this spam_email from being saved:</h2>
+
+                      <ul>
+                      <% spam_email.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                      <% end %>
+                      </ul>
+                    </div>
+                  <% end %>
+
+                <div class="form-group">
+                  <%= form.label "User Name" %>
+                  <%= form.text_field :user_name, class: "form-control" %>
+                  <br>
+                  <%= form.label "User Email" %>
+                  <%= form.text_field :user_real_email, class: "form-control" %>
+                </div>
+                <br>
+
+                <div class="form-group">
+                  <%= form.label :victim_name %>
+                  <%= form.text_field :victim_name, class: "form-control" %>
+                  <br>
+                  <%= form.label "Victim email" %>
+                  <%= form.text_field :victim_real_email, class: "form-control" %>
+                </div>
+
+                <div class="form-group">
+                  <%= form.label :contents %> <br>
+                  <%= form.text_area :contents, size: "50x30", value: @spam_type[:template], class: "form-control"  %>
+                </div>
+
+                <div class="form-group">
+                  <%= form.label "# of emails"%>
+                  <%= form.number_field :num_emails, in: 1..50, step: 1, value: 1, class: "form-control" %>
+                </div>
+
+                <div class="actions">
+                  <%= recaptcha_tags %>
+                  <%= form.submit %>
+                  <% end %>
+                </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-1">
+  </div>
+
+</div>

@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-6">
+  </div>
+
+  <div class="col-5">
+    <div class="container bg-transparent border-none" align="CENTER">
+      <div class="card-body">
+        <div class="card bg-danger mb-3">
+          <div class="card-header" align="CENTER">
+            <h2>Select Spam Type</h2>
+          </div>
+          <div class="card-body" align="CENTER">
+            <%= form_with(url: '/new/2') do |form| %>
+
+              <div class="field">
+                <%= form.label :spam_type %>
+                <%= form.collection_select :spam_type_id, SpamType.all, :id, :name %>
+              </div>
+
+
+          </div>
+          <div class="card-footer">
+            <div class="actions">
+              <%= form.submit 'Select', class: 'btn btn-primary' %>
+            </div>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-1">
+  </div>
+
+</div>

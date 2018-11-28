@@ -1,0 +1,907 @@
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE DATABASE "spamjam_development" ENCODING = 'utf8'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE "spamjam_test" ENCODING = 'utf8'[0m
+  ↳ bin/rails:9
+  [1m[35m (16.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (12.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "fake_emails" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "fake_emails" ("id" bigserial primary key, "email" character varying, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_fake_emails_on_user_id" ON "fake_emails"  ("user_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (4.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "spam_emails" CASCADE[0m
+  ↳ db/schema.rb:26
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "spam_emails" ("id" bigserial primary key, "contents" character varying, "user_id" bigint, "victim_id" bigint, "spam_type_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_spam_emails_on_spam_type_id" ON "spam_emails"  ("spam_type_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_spam_emails_on_user_id" ON "spam_emails"  ("user_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_spam_emails_on_victim_id" ON "spam_emails"  ("victim_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (2.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "spam_types" CASCADE[0m
+  ↳ db/schema.rb:38
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "spam_types" ("id" bigserial primary key, "name" character varying, "template" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:38
+  [1m[35m (3.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:45
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "real_email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:45
+  [1m[35m (3.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "victims" CASCADE[0m
+  ↳ db/schema.rb:52
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "victims" ("id" bigserial primary key, "name" character varying, "real_email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:52
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "fake_emails" ADD CONSTRAINT "fk_rails_9f6b9f4191"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:59
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "spam_emails" ADD CONSTRAINT "fk_rails_70eb86a7b5"
+FOREIGN KEY ("spam_type_id")
+  REFERENCES "spam_types" ("id")
+[0m
+  ↳ db/schema.rb:60
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "spam_emails" ADD CONSTRAINT "fk_rails_0b59cdbdf4"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:61
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "spam_emails" ADD CONSTRAINT "fk_rails_1a1d090f23"
+FOREIGN KEY ("victim_id")
+  REFERENCES "victims" ("id")
+[0m
+  ↳ db/schema.rb:62
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (11.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "fake_emails" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "fake_emails" ("id" bigserial primary key, "email" character varying, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_fake_emails_on_user_id" ON "fake_emails"  ("user_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (3.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "spam_emails" CASCADE[0m
+  ↳ db/schema.rb:26
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "spam_emails" ("id" bigserial primary key, "contents" character varying, "user_id" bigint, "victim_id" bigint, "spam_type_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_spam_emails_on_spam_type_id" ON "spam_emails"  ("spam_type_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_spam_emails_on_user_id" ON "spam_emails"  ("user_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_spam_emails_on_victim_id" ON "spam_emails"  ("victim_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (3.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "spam_types" CASCADE[0m
+  ↳ db/schema.rb:38
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "spam_types" ("id" bigserial primary key, "name" character varying, "template" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:38
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:45
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "real_email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:45
+  [1m[35m (2.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "victims" CASCADE[0m
+  ↳ db/schema.rb:52
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "victims" ("id" bigserial primary key, "name" character varying, "real_email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:52
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "fake_emails" ADD CONSTRAINT "fk_rails_9f6b9f4191"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:59
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "spam_emails" ADD CONSTRAINT "fk_rails_70eb86a7b5"
+FOREIGN KEY ("spam_type_id")
+  REFERENCES "spam_types" ("id")
+[0m
+  ↳ db/schema.rb:60
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "spam_emails" ADD CONSTRAINT "fk_rails_0b59cdbdf4"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  ↳ db/schema.rb:61
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "spam_emails" ADD CONSTRAINT "fk_rails_1a1d090f23"
+FOREIGN KEY ("victim_id")
+  REFERENCES "victims" ("id")
+[0m
+  ↳ db/schema.rb:62
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2018-11-27 22:27:10.743834"], ["key", "environment"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2018-11-27 22:27:10.748290"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "real_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lucila Sawayn"], ["real_email", "michealkunde@boyle.com"], ["created_at", "2018-11-27 22:27:11.517466"], ["updated_at", "2018-11-27 22:27:11.517466"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "real_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Claude Jenkins"], ["real_email", "vina@herzogkautzer.co"], ["created_at", "2018-11-27 22:27:11.526912"], ["updated_at", "2018-11-27 22:27:11.526912"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "real_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Kyle Skiles"], ["real_email", "chu@quitzon.net"], ["created_at", "2018-11-27 22:27:11.529401"], ["updated_at", "2018-11-27 22:27:11.529401"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mVictim Create (0.7ms)[0m  [1m[32mINSERT INTO "victims" ("name", "real_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Adrian Macejkovic V"], ["real_email", "shona@kemmerhuel.org"], ["created_at", "2018-11-27 22:27:11.543562"], ["updated_at", "2018-11-27 22:27:11.543562"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mVictim Create (0.4ms)[0m  [1m[32mINSERT INTO "victims" ("name", "real_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Mauricio Dare"], ["real_email", "martin@abernathy.io"], ["created_at", "2018-11-27 22:27:11.553085"], ["updated_at", "2018-11-27 22:27:11.553085"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mVictim Create (0.4ms)[0m  [1m[32mINSERT INTO "victims" ("name", "real_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ms. Shari Lindgren"], ["real_email", "jeffersonturner@wehnerullrich.biz"], ["created_at", "2018-11-27 22:27:11.559406"], ["updated_at", "2018-11-27 22:27:11.559406"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mVictim Create (0.3ms)[0m  [1m[32mINSERT INTO "victims" ("name", "real_email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ellis Wisoky II"], ["real_email", "jerebergstrom@koch.biz"], ["created_at", "2018-11-27 22:27:11.562114"], ["updated_at", "2018-11-27 22:27:11.562114"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mVictim Load (0.3ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mSpamType Load (0.6ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mVictim Load (0.2ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mSpamType Load (0.2ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mVictim Load (0.2ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mSpamType Load (0.2ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mVictim Load (0.3ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mSpamType Load (0.2ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mVictim Load (0.2ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mSpamType Load (0.2ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mVictim Load (0.2ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mSpamType Load (0.2ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mVictim Load (0.1ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mSpamType Load (0.1ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mVictim Load (0.1ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mSpamType Load (0.1ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mVictim Load (0.1ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mSpamType Load (0.1ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mVictim Load (0.2ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mSpamType Load (0.2ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mFakeEmail Create (1.1ms)[0m  [1m[32mINSERT INTO "fake_emails" ("email", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "willy@rueckerdenesik.co"], ["user_id", 3], ["created_at", "2018-11-27 22:27:11.653522"], ["updated_at", "2018-11-27 22:27:11.653522"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mFakeEmail Create (0.5ms)[0m  [1m[32mINSERT INTO "fake_emails" ("email", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "haroob@doylewelch.co"], ["user_id", 3], ["created_at", "2018-11-27 22:27:11.665026"], ["updated_at", "2018-11-27 22:27:11.665026"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mFakeEmail Create (0.4ms)[0m  [1m[32mINSERT INTO "fake_emails" ("email", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "rendawolff@bosco.co"], ["user_id", 3], ["created_at", "2018-11-27 22:27:11.670047"], ["updated_at", "2018-11-27 22:27:11.670047"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mFakeEmail Create (0.4ms)[0m  [1m[32mINSERT INTO "fake_emails" ("email", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "eldridgereichert@sauer.net"], ["user_id", 2], ["created_at", "2018-11-27 22:27:11.673820"], ["updated_at", "2018-11-27 22:27:11.673820"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mFakeEmail Create (0.4ms)[0m  [1m[32mINSERT INTO "fake_emails" ("email", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "cristopher@stoltenberg.io"], ["user_id", 1], ["created_at", "2018-11-27 22:27:11.677580"], ["updated_at", "2018-11-27 22:27:11.677580"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mFakeEmail Create (0.4ms)[0m  [1m[32mINSERT INTO "fake_emails" ("email", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "robinstoltenberg@mullergrant.net"], ["user_id", 3], ["created_at", "2018-11-27 22:27:11.680604"], ["updated_at", "2018-11-27 22:27:11.680604"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mFakeEmail Create (0.4ms)[0m  [1m[32mINSERT INTO "fake_emails" ("email", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "bette@dach.biz"], ["user_id", 3], ["created_at", "2018-11-27 22:27:11.684246"], ["updated_at", "2018-11-27 22:27:11.684246"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mFakeEmail Create (0.5ms)[0m  [1m[32mINSERT INTO "fake_emails" ("email", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "marilubecker@erdman.org"], ["user_id", 2], ["created_at", "2018-11-27 22:27:11.687742"], ["updated_at", "2018-11-27 22:27:11.687742"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mFakeEmail Create (0.3ms)[0m  [1m[32mINSERT INTO "fake_emails" ("email", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "mertiedamore@satterfield.io"], ["user_id", 2], ["created_at", "2018-11-27 22:27:11.691233"], ["updated_at", "2018-11-27 22:27:11.691233"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mFakeEmail Create (0.4ms)[0m  [1m[32mINSERT INTO "fake_emails" ("email", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "ernestokirlin@carter.info"], ["user_id", 3], ["created_at", "2018-11-27 22:27:11.694785"], ["updated_at", "2018-11-27 22:27:11.694785"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mSpamType Create (0.8ms)[0m  [1m[32mINSERT INTO "spam_types" ("name", "template", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Social Media Expert"], ["template", " Hey\n  I am called Scott and I specialize in Social network engagement marketing which helps to increase business and can give your facebook page a wow factor. I've emailed you just to let you know I have some very special deals on currently which ust might interest you as a business.\n\n  <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n  I help gain facebook likes and Twitter followers for business as a way to start increasing profits and immersion through social engagement. If a new client logs onto facebook or social media and sees that you have 23500000 likes over your competition's paltry 300, they will more likely throw money at you. This works for nearly any industry: Business, Marketing, Animation, Arson, Starving-Children, etc. As you can see by my credentials I'm 100% trustworthy and can make the changes your company needs. I will establish your brand as a trusted source."], ["created_at", "2018-11-27 22:27:11.700905"], ["updated_at", "2018-11-27 22:27:11.700905"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mSpamType Create (0.4ms)[0m  [1m[32mINSERT INTO "spam_types" ("name", "template", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lucky Winner"], ["template", " CONTRATULATIONS!!!\n\n  You won a all-paid-for vacation package to Unspecifiedistan ($300,000,000,000 value! Wow!) Please send Name, Address, CC#, SS#, to <a href='spam-jam.herokuapp.com/bam'>JeezusChrist@HowGullible.com </a>\n\n  You have 5 hours to redeem this amazing offer before it gets handed down to the next lucky winner! Act fast! Here in unspecifiedistan we have purely unadultured views of the desert mountain ranges! Come enjoy an unlimited buffet of white truffle, gold flakes, and caviar. The roalty, yes. Such a good offer. would be a shame if you missed out. All you have to do is provide the info mentioned above but most importantly\n\n    CREDIT CARD INFO\n    SOCIAL SECURITY\n\n  We need this info to guarantee your safety.\n\n  - Ug lee\n  Administration Consultant Guru\n  999-99-99999-9-92 Uganda\n  how you write these addresses"], ["created_at", "2018-11-27 22:27:11.704220"], ["updated_at", "2018-11-27 22:27:11.704220"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:53
+  [1m[36mSpamType Create (0.4ms)[0m  [1m[32mINSERT INTO "spam_types" ("name", "template", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "FBI/CIA/IRS Arrest Warrant"], ["template", " Dear Sir or Madame,\n    since your transaction of $1M USD has fallen through, the FBI has issued a warrant for your arrest for fradulent fund abuse(?) You need to act fast or agents will descend onto your household and destroy all your fine china. You wouldn't want that would you?\n\n    Oh yeah, CIA also has a hit out on you because they can't be one-up'ed by the FBI. There's no telling what might happen. Please wire money to Flatiron. The got hackers there that can help you out. Please see the following for more INFO\n\n    <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n\n    You have 48 hours before the ninjas come get you."], ["created_at", "2018-11-27 22:27:11.706735"], ["updated_at", "2018-11-27 22:27:11.706735"]]
+  ↳ db/seeds.rb:53
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:62
+  [1m[36mSpamType Create (0.3ms)[0m  [1m[32mINSERT INTO "spam_types" ("name", "template", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Thirsty Code Camp"], ["template", "Hello Prospective Student,\n    DevBasement has had the best record of awesome stuff related to coding. What's that? You want FULL STACK training? well we got STACKS! ALL THE STACKS! Our instructors are the most STACKED in the industry! Our codebase extends well beyong Java, C++, Ruby, C#... We at DevBasement teach practical code approaches such as PROFANITY and NOT-GIVING-A-****-ABOUT-BUGS v.2.3s. Come join us\n\n    We will need the following:\n    TELEPHONE\n    NAME\n    ARM & LEG\n    FIRSTBORN\n    YOUR OLD BATH WATER (for immersion)\n\n    Start YOUR coding journey off strong. Learn things like How-to-win-at-arguements and Slack. We will slack off so hard even your future employers will think that you program like the undead. 120% program approval rating. such good. wow. learn to united states of stack today!\n\n    <a href='spamjam.herokuapp.com/bam'>Start Slacking Hard Today!</a>\n\n    DevBasement School\n    some hole in the ground\n    222-2222-22-2222"], ["created_at", "2018-11-27 22:27:11.709194"], ["updated_at", "2018-11-27 22:27:11.709194"]]
+  ↳ db/seeds.rb:62
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:80
+  [1m[36mSpamType Create (0.3ms)[0m  [1m[32mINSERT INTO "spam_types" ("name", "template", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "The Hookup Trap"], ["template", " Hey bb I thot ur cutexxx xoxoxo I am lonely please check out my insucurities here: <a href='spamjam.herokuapp.com/bam'>'Click For Pics!'</a> I wanna pour strawberry limeade all over you. let's talk mmmk xxxxoxoxoxxxoxoxxxoxxo -Lizzz"], ["created_at", "2018-11-27 22:27:11.711395"], ["updated_at", "2018-11-27 22:27:11.711395"]]
+  ↳ db/seeds.rb:80
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:80
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mSpamType Create (0.3ms)[0m  [1m[32mINSERT INTO "spam_types" ("name", "template", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Kpop Recruiting"], ["template", "You have been selected to join boys transitioning to girls generation. Can you kimchi good? Lets have a good time and get some kbbq."], ["created_at", "2018-11-27 22:27:11.713519"], ["updated_at", "2018-11-27 22:27:11.713519"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:85
+  [1m[36mSpamType Create (0.6ms)[0m  [1m[32mINSERT INTO "spam_types" ("name", "template", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ugandan Prince"], ["template", "Hello Broda, I am King UsainBolt-Jankles de Knuckles XVII. I am contacting you on here because I want you to know da whey. Me and my bruddahz have gathered here to celebrate and honor our Queen Motha in all her glory. The wae to our Queen is through your bank account. *tongue clicks* please provide the following so we may follow da queen muddah to find da whey.\n\n    Bank ACCT Routing #\n    Full Name\n    Passport\n    meme library (if you do not hab dis, you do not know da whey)\n\n    you can provide all de information by following <a href='spamjam.herokuapp.com/bam'>dis whey</a>.\n\n  Our bruddahz thank you for your cooperation and da queen mutha shall lead us down the right whey. If you respond in time the queen muddah will gib you free toaster. Thank you, Bruddah.\n\n  -Knuckles\n  *tongue clicks**tongue clicks**tongue clicks**tongue clicks**tongue clicks**tongue clicks**tongue clicks*\n\n    "], ["created_at", "2018-11-27 22:27:11.715745"], ["updated_at", "2018-11-27 22:27:11.715745"]]
+  ↳ db/seeds.rb:85
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:85
+Started GET "/" for 127.0.0.1 at 2018-11-27 16:27:45 -0600
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/disalvo/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by SpamEmailsController#welcome as HTML
+  Rendering spam_emails/welcome.html.erb within layouts/application
+  Rendered spam_emails/welcome.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 4955ms (Views: 4945.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/spam_emails" for 127.0.0.1 at 2018-11-27 16:27:52 -0600
+Processing by SpamEmailsController#index as HTML
+  Rendering spam_emails/index.html.erb within layouts/application
+  [1m[36mSpamEmail Load (1.0ms)[0m  [1m[34mSELECT "spam_emails".* FROM "spam_emails"[0m
+  ↳ app/models/spam_email.rb:8
+  Rendered spam_emails/index.html.erb within layouts/application (19.6ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 7.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    12:             <div class="container bg-transparent border-none">
+    13:               <div class="actions">
+    14:                 <h1>Analytics</h1>
+    15:                 <p><font size="3">Favorite Spam Type: <%= @spam_emails.favorite_type[0].name %>
+    16:                 <br>
+    17:                 Times Sent: <%= @spam_emails.favorite_type[1] %></p>
+    18:                 <p>Total Emails Sent: <%= @spam_emails.total %></p>
+  
+app/views/spam_emails/index.html.erb:15:in `_app_views_spam_emails_index_html_erb__2642791845855891828_70354130380340'
+Started GET "/spam_emails" for 127.0.0.1 at 2018-11-27 16:29:45 -0600
+Processing by SpamEmailsController#index as HTML
+  Rendering spam_emails/index.html.erb within layouts/application
+  [1m[36mSpamEmail Load (0.4ms)[0m  [1m[34mSELECT "spam_emails".* FROM "spam_emails"[0m
+  ↳ app/models/spam_email.rb:8
+  Rendered spam_emails/index.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    12:             <div class="container bg-transparent border-none">
+    13:               <div class="actions">
+    14:                 <h1>Analytics</h1>
+    15:                 <p><font size="3">Favorite Spam Type: <%= @spam_emails.favorite_type[0].name %>
+    16:                 <br>
+    17:                 Times Sent: <%= @spam_emails.favorite_type[1] %></p>
+    18:                 <p>Total Emails Sent: <%= @spam_emails.total %></p>
+  
+app/views/spam_emails/index.html.erb:15:in `_app_views_spam_emails_index_html_erb__2642791845855891828_70354176068040'
+Started GET "/spam_emails" for 127.0.0.1 at 2018-11-27 16:30:41 -0600
+Processing by SpamEmailsController#index as HTML
+  [1m[36mSpamEmail Load (0.6ms)[0m  [1m[34mSELECT  "spam_emails".* FROM "spam_emails" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/spam_emails_controller.rb:6
+Completed 500 Internal Server Error in 110226ms (ActiveRecord: 3.5ms)
+
+
+  
+Started GET "/new/1" for 127.0.0.1 at 2018-11-27 16:32:41 -0600
+SystemExit (exit):
+  
+Processing by SpamEmailsController#new1 as HTML
+(byebug):1:in `exit'
+(byebug):1:in `index'
+app/controllers/spam_emails_controller.rb:6:in `index'
+  Rendering spam_emails/new1.html.erb within layouts/application
+  [1m[36mSpamType Load (1.7ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/views/spam_emails/new1.html.erb:17
+  Rendered spam_emails/new1.html.erb within layouts/application (4220.6ms)
+Completed 200 OK in 4931ms (Views: 4898.8ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-27 16:32:57 -0600
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/disalvo/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by SpamEmailsController#welcome as HTML
+  Rendering spam_emails/welcome.html.erb within layouts/application
+  Rendered spam_emails/welcome.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 331ms (Views: 321.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new/1" for 127.0.0.1 at 2018-11-27 16:32:59 -0600
+Processing by SpamEmailsController#new1 as HTML
+  Rendering spam_emails/new1.html.erb within layouts/application
+  [1m[36mSpamType Load (0.8ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/views/spam_emails/new1.html.erb:17
+  Rendered spam_emails/new1.html.erb within layouts/application (242.6ms)
+Completed 200 OK in 271ms (Views: 257.4ms | ActiveRecord: 9.5ms)
+
+
+Started POST "/new/2" for 127.0.0.1 at 2018-11-27 16:33:02 -0600
+Processing by SpamEmailsController#new as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1hWV9Tqk31/uBqzzJq4A3//tEYPBWQOPgxbcS7enXd5t+0ii0ft/WGSb+aRZ+JL/mDoWNWFf+j5iz02WAgO2Pg==", "spam_type_id"=>"1"}
+Redirected to http://localhost:3000/new/2
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/new/2" for 127.0.0.1 at 2018-11-27 16:33:02 -0600
+Processing by SpamEmailsController#dog as HTML
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:21
+  Rendering spam_emails/new.html.erb within layouts/application
+  Rendered spam_emails/_form.html.erb (19.0ms)
+  Rendered spam_emails/new.html.erb within layouts/application (21.9ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 7.6ms)
+
+
+  
+ActionView::Template::Error (No site key specified.):
+    52:                 </div>
+    53: 
+    54:                 <div class="actions">
+    55:                   <%= recaptcha_tags %>
+    56:                   <%= form.submit %>
+    57:                   <% end %>
+    58:                 </div>
+  
+app/views/spam_emails/_form.html.erb:55:in `block in _app_views_spam_emails__form_html_erb__4435827778101552263_70171699861120'
+app/views/spam_emails/_form.html.erb:14:in `_app_views_spam_emails__form_html_erb__4435827778101552263_70171699861120'
+app/views/spam_emails/new.html.erb:2:in `_app_views_spam_emails_new_html_erb___2879894846344849099_70171740702900'
+app/controllers/spam_emails_controller.rb:24:in `dog'
+Started GET "/" for 127.0.0.1 at 2018-11-28 14:49:25 -0600
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/disalvo/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by SpamEmailsController#welcome as HTML
+  Rendering spam_emails/welcome.html.erb within layouts/application
+  Rendered spam_emails/welcome.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 377ms (Views: 367.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new/1" for 127.0.0.1 at 2018-11-28 14:49:28 -0600
+Processing by SpamEmailsController#new1 as HTML
+  Rendering spam_emails/new1.html.erb within layouts/application
+  [1m[36mSpamType Load (24.5ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/views/spam_emails/new1.html.erb:17
+  Rendered spam_emails/new1.html.erb within layouts/application (269.0ms)
+Completed 200 OK in 297ms (Views: 255.6ms | ActiveRecord: 38.7ms)
+
+
+Started POST "/new/2" for 127.0.0.1 at 2018-11-28 14:49:31 -0600
+Processing by SpamEmailsController#new as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zve+MuaOBlIrHmb7yrubiTsvgAuvMF6F+KiFxjsjOwvdGWNlDdGmVaGDM6y17QmpXPiHvQ82pzQZcRQbjofQ6w==", "spam_type_id"=>"1"}
+Redirected to http://localhost:3000/new/2
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/new/2" for 127.0.0.1 at 2018-11-28 14:49:31 -0600
+Processing by SpamEmailsController#dog as HTML
+  [1m[36mSpamType Load (0.6ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:21
+  Rendering spam_emails/new.html.erb within layouts/application
+  Rendered spam_emails/_form.html.erb (12.5ms)
+  Rendered spam_emails/new.html.erb within layouts/application (15.3ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 8.9ms)
+
+
+  
+ActionView::Template::Error (No site key specified.):
+    52:                 </div>
+    53: 
+    54:                 <div class="actions">
+    55:                   <%= recaptcha_tags %>
+    56:                   <%= form.submit %>
+    57:                   <% end %>
+    58:                 </div>
+  
+app/views/spam_emails/_form.html.erb:55:in `block in _app_views_spam_emails__form_html_erb__2835558544371989350_70314531334660'
+app/views/spam_emails/_form.html.erb:14:in `_app_views_spam_emails__form_html_erb__2835558544371989350_70314531334660'
+app/views/spam_emails/new.html.erb:2:in `_app_views_spam_emails_new_html_erb__1760027622291921318_70314515853560'
+app/controllers/spam_emails_controller.rb:24:in `dog'
+Started GET "/" for 127.0.0.1 at 2018-11-28 14:55:15 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/disalvo/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/disalvo/.rvm/gems/ruby-2.3.3/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/disalvo/.rvm/gems/ruby-2.3.3/gems/railties-5.2.1/lib/rails/templates/rails/welcome/index.html.erb (3.1ms)
+Completed 200 OK in 18ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-28 14:56:06 -0600
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/disalvo/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by SpamEmailsController#welcome as HTML
+  Rendering spam_emails/welcome.html.erb within layouts/application
+  Rendered spam_emails/welcome.html.erb within layouts/application (316.8ms)
+Completed 500 Internal Server Error in 340ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_1_path' for #<#<Class:0x007f90bf2304e0>:0x007f90be6097e8>
+Did you mean?  new_2_path):
+    13:             <image  src="https://vignette.wikia.nocookie.net/creepypasta/images/f/f3/Spam.png" width=100% height=auto/>
+    14:           </div>
+    15:           <div class="card-footer">
+    16:             <%= button_to("spam your friend", new_1_path, method: 'get', class: "btn btn-primary") %>
+    17:             <br>
+    18:             <%= button_to("analytics", spam_emails_path, method: 'get', class: "btn btn-primary") %>
+    19:           </div>
+  
+app/views/spam_emails/welcome.html.erb:16:in `_app_views_spam_emails_welcome_html_erb__690739796484365737_70129829383640'
+Started GET "/" for 127.0.0.1 at 2018-11-28 14:56:31 -0600
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/disalvo/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by SpamEmailsController#welcome as HTML
+  Rendering spam_emails/welcome.html.erb within layouts/application
+  Rendered spam_emails/welcome.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 306ms (Views: 295.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-28 14:56:48 -0600
+Processing by SpamEmailsController#welcome as HTML
+  Rendering spam_emails/welcome.html.erb within layouts/application
+  Rendered spam_emails/welcome.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 63ms (Views: 59.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new/1" for 127.0.0.1 at 2018-11-28 14:57:05 -0600
+Processing by SpamEmailsController#new1 as HTML
+  Rendering spam_emails/new1.html.erb within layouts/application
+  [1m[36mSpamType Load (1.2ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/views/spam_emails/new1.html.erb:17
+  Rendered spam_emails/new1.html.erb within layouts/application (106.1ms)
+Completed 200 OK in 133ms (Views: 119.5ms | ActiveRecord: 10.1ms)
+
+
+Started POST "/new/2" for 127.0.0.1 at 2018-11-28 14:57:07 -0600
+Processing by SpamEmailsController#new as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ycP7JDZ4di6+fKRhT7FdZNBIcjU1ZFyJaiPTdxxacptyLSZz3SfWKTTh8TYw589Et591g5VipTiL+kKqqf6Zew==", "spam_type_id"=>"1"}
+Redirected to http://localhost:3000/new/2
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/new/2" for 127.0.0.1 at 2018-11-28 14:57:07 -0600
+Processing by SpamEmailsController#dog as HTML
+  [1m[36mSpamType Load (0.4ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:21
+  Rendering spam_emails/new.html.erb within layouts/application
+  Rendered spam_emails/_form.html.erb (8.2ms)
+  Rendered spam_emails/new.html.erb within layouts/application (11.1ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 6.7ms)
+
+
+  
+ActionView::Template::Error (No site key specified.):
+    52:                 </div>
+    53: 
+    54:                 <div class="actions">
+    55:                   <%= recaptcha_tags %>
+    56:                   <%= form.submit %>
+    57:                   <% end %>
+    58:                 </div>
+  
+app/views/spam_emails/_form.html.erb:55:in `block in _app_views_spam_emails__form_html_erb___2730707788401429897_70183287844920'
+app/views/spam_emails/_form.html.erb:14:in `_app_views_spam_emails__form_html_erb___2730707788401429897_70183287844920'
+app/views/spam_emails/new.html.erb:2:in `_app_views_spam_emails_new_html_erb___3994716782632598428_70183292262000'
+app/controllers/spam_emails_controller.rb:24:in `dog'
+Started GET "/" for 127.0.0.1 at 2018-11-28 14:57:14 -0600
+Processing by SpamEmailsController#welcome as HTML
+  Rendering spam_emails/welcome.html.erb within layouts/application
+  Rendered spam_emails/welcome.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 28ms (Views: 24.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-28 14:57:39 -0600
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/disalvo/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by SpamEmailsController#welcome as HTML
+  Rendering spam_emails/welcome.html.erb within layouts/application
+  Rendered spam_emails/welcome.html.erb within layouts/application (285.5ms)
+Completed 500 Internal Server Error in 302ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_1_path' for #<#<Class:0x007f877d97e940>:0x007f8776777d10>
+Did you mean?  new_2_path):
+    13:             <image  src="https://vignette.wikia.nocookie.net/creepypasta/images/f/f3/Spam.png" width=100% height=auto/>
+    14:           </div>
+    15:           <div class="card-footer">
+    16:             <%= button_to("spam your friend", new_1_path, method: 'get', class: "btn btn-primary") %>
+    17:             <br>
+    18:             <%= button_to("analytics", spam_emails_path, method: 'get', class: "btn btn-primary") %>
+    19:           </div>
+  
+app/views/spam_emails/welcome.html.erb:16:in `_app_views_spam_emails_welcome_html_erb___836195147916789638_70109952211860'
+Started GET "/" for 127.0.0.1 at 2018-11-28 15:00:36 -0600
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/disalvo/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by SpamEmailsController#welcome as HTML
+  Rendering spam_emails/welcome.html.erb within layouts/application
+  Rendered spam_emails/welcome.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 271ms (Views: 262.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new/1" for 127.0.0.1 at 2018-11-28 15:00:38 -0600
+Processing by SpamEmailsController#new1 as HTML
+  Rendering spam_emails/new1.html.erb within layouts/application
+  [1m[36mSpamType Load (0.9ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/views/spam_emails/new1.html.erb:17
+  Rendered spam_emails/new1.html.erb within layouts/application (153.2ms)
+Completed 200 OK in 183ms (Views: 169.0ms | ActiveRecord: 10.8ms)
+
+
+Started POST "/new/2" for 127.0.0.1 at 2018-11-28 15:00:41 -0600
+Processing by SpamEmailsController#new as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F8U42gmAzk+Bs9DJ4ImtBrXs3tT298tVaoboKJkW0OGsK+WN4t9uSAsuhZ6f3z8m0jvZYlbxMuSLX3n1LLI7AQ==", "spam_type_id"=>"2"}
+Redirected to http://localhost:3000/new/2
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/new/2" for 127.0.0.1 at 2018-11-28 15:00:41 -0600
+Processing by SpamEmailsController#dog as HTML
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:21
+  Rendering spam_emails/new.html.erb within layouts/application
+  Rendered spam_emails/_form.html.erb (9.1ms)
+  Rendered spam_emails/new.html.erb within layouts/application (11.7ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 7.9ms)
+
+
+  
+ActionView::Template::Error (No site key specified.):
+    52:                 </div>
+    53: 
+    54:                 <div class="actions">
+    55:                   <%= recaptcha_tags %>
+    56:                   <%= form.submit %>
+    57:                   <% end %>
+    58:                 </div>
+  
+app/views/spam_emails/_form.html.erb:55:in `block in _app_views_spam_emails__form_html_erb___1803969305499207283_70165807565860'
+app/views/spam_emails/_form.html.erb:14:in `_app_views_spam_emails__form_html_erb___1803969305499207283_70165807565860'
+app/views/spam_emails/new.html.erb:2:in `_app_views_spam_emails_new_html_erb__3384226671297861726_70165792914740'
+app/controllers/spam_emails_controller.rb:24:in `dog'
+Started GET "/" for 127.0.0.1 at 2018-11-28 15:10:24 -0600
+Started GET "/" for 127.0.0.1 at 2018-11-28 15:10:34 -0600
+Processing by SpamEmailsController#welcome as HTML
+  Rendering spam_emails/welcome.html.erb within layouts/application
+  Rendered spam_emails/welcome.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 45ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Processing by SpamEmailsController#welcome as HTML
+  Rendering spam_emails/welcome.html.erb within layouts/application
+  Rendered spam_emails/welcome.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 26ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-28 15:46:16 -0600
+Processing by SpamEmailsController#welcome as HTML
+  Rendering spam_emails/welcome.html.erb within layouts/application
+  Rendered spam_emails/welcome.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 36ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new/1" for 127.0.0.1 at 2018-11-28 15:46:29 -0600
+Processing by SpamEmailsController#new1 as HTML
+  Rendering spam_emails/new1.html.erb within layouts/application
+  [1m[36mSpamType Load (1.7ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/views/spam_emails/new1.html.erb:17
+  Rendered spam_emails/new1.html.erb within layouts/application (43.5ms)
+Completed 200 OK in 71ms (Views: 54.2ms | ActiveRecord: 14.0ms)
+
+
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" ORDER BY "spam_types"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" ORDER BY "spam_types"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-28 15:53:33 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/spam_types"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-28 15:54:39 -0600
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/disalvo/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/spam_types_controller.rb:6
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-28 15:56:06 -0600
+  [1m[36mSpamType Load (1.4ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-28 15:56:06 -0600
+  ↳ app/controllers/spam_types_controller.rb:7
+Completed 200 OK in 87007ms (Views: 4.5ms | ActiveRecord: 10.0ms)
+
+
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (2.4ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:7
+Processing by SpamTypesController#index as */*
+Completed 200 OK in 5951ms (Views: 4.9ms | ActiveRecord: 2.4ms)
+
+
+  [1m[36mSpamType Load (1.6ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:7
+Completed 200 OK in 6093ms (Views: 4.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-28 15:57:08 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.4ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 24ms (Views: 7.3ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-28 16:04:44 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.8ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-28 16:06:30 -0600
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/disalvo/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.8ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 43ms (Views: 21.6ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-28 16:16:14 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (1.0ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-28 16:23:36 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (1.4ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-28 16:23:46 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.4ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-28 16:25:58 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (4.9ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 9ms (Views: 3.1ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-28 16:26:53 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-28 16:27:14 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.7ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-28 16:59:51 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (5.5ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 10ms (Views: 3.5ms | ActiveRecord: 5.5ms)
+
+

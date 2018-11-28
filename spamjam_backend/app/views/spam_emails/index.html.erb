@@ -1,0 +1,43 @@
+
+
+<div class="row">
+  <div class="col-6">
+  </div>
+
+  <div class="col-5">
+    <div class="container bg-transparent border-none" align="CENTER">
+      <div class="card-body">
+        <div class="card bg-danger mb-3">
+          <div class="card-body" align="CENTER">
+            <div class="container bg-transparent border-none">
+              <div class="actions">
+                <h1>Analytics</h1>
+                <p><font size="3">Favorite Spam Type: <%= @spam_emails.favorite_type[0].name %>
+                <br>
+                Times Sent: <%= @spam_emails.favorite_type[1] %></p>
+                <p>Total Emails Sent: <%= @spam_emails.total %></p>
+                <p>Saddest Victim: <%= @spam_emails.saddest[0].name %>
+                <br>
+                Emails Received:<%= @spam_emails.saddest[1] %></font></p>
+                <br>
+              </div>
+            </div>
+          </div>
+          <label>| USER | VICTIM | SPAM TYPE |</label><br>
+          <div class="card">
+            <textarea label="All Spams:" rows=20 cols=3>
+              <% SpamEmail.all.each do |s| %>
+                  <%= "---------------------------------------" %>
+                  <%= "#{User.find(s.user_id).name}" + " | " + "#{Victim.find(s.victim_id).name}" + " | " + "#{SpamType.find(s.spam_type_id).name}" %>
+              <% end %>
+            </textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-1">
+  </div>
+
+</div>
