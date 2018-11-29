@@ -31,23 +31,22 @@ class SpamEmailsController < ApplicationController
   end
 
   def create
-    @spam_type = SpamType.find(session[:spam_type_id])
-    @user = User.create(name: params[:spam_email][:user_name], real_email: params[:spam_email][:user_real_email])
-    @victim = Victim.create(name: params[:spam_email][:victim_name], real_email: params[:spam_email][:victim_real_email])
+    byebug
+    @spam_type = SpamType.find_by(name: params[:type])
+    # @user = User.create(name: params[:spam_email][:user_name], real_email: params[:spam_email][:user_real_email])
+    @victim = Victim.create(real_email: params[:spam_email])
 
-    @num_emails = params[:spam_email][:num_emails].to_i
+    @num_emails = params[:num_emails].to_i
 
     if(@num_emails && @num_emails > 0 && @num_emails <= 50)
       @num_emails.times do
-        @spam_email = SpamEmail.create(contents: params[:spam_email][:contents] , user_id: @user.id , victim_id: @victim.id , spam_type_id: @spam_type.id)
+        @spam_email = SpamEmail.create(contents: params[:contents] , user_id: 1 , victim_id: @victim.id , spam_type_id: @spam_type.id)
+        #hard coded user_id: 1 since the react fontend doesn't have session information (and we were lazy)
       end# Janky way to create # emails based on the form purely for database stuff
     end#makes sure @num_emails is not nil or 0
 
-
-
-
     respond_to do |format|
-      if @spam_email.valid? && @user.valid? && @victim.valid? &&verify_recaptcha(model: @spam_email)
+      if @spam_email.valid? && @victim.valid? && verify_recaptcha(model: @spam_email)
         if !@num_emails.nil? #COME BACK HERE
           #do the thing multipunch
           SpamEmailMailer.multipunch(@num_emails,@victim,@spam_email,@user).deliver_now
@@ -69,6 +68,7 @@ class SpamEmailsController < ApplicationController
     end
 
     def spam_email_params
+      byebug
       params.require(:spam_email).permit(:contents, :spam_type_id, :victim_id, :user_id)
     end
 end

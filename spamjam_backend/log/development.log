@@ -905,3 +905,851 @@ Processing by SpamTypesController#index as */*
 Completed 200 OK in 10ms (Views: 3.5ms | ActiveRecord: 5.5ms)
 
 
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 14:42:28 -0600
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/disalvo/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (1.0ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 56ms (Views: 8.7ms | ActiveRecord: 31.8ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 14:42:32 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (1.6ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 14:43:14 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (1.2ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 14:45:54 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.7ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 14:46:29 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 14:47:58 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.6ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 14:48:10 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.6ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 14:57:57 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (1.8ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 14:58:37 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 14:59:26 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.4ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 15:00:42 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 15:01:09 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 15:01:44 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.6ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 15:01:57 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (1.3ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 15:02:03 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.9ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 15:04:28 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.6ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 15:04:37 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 15:22:13 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (1.2ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 31ms (Views: 10.9ms | ActiveRecord: 15.0ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 15:22:22 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 15:23:02 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 15:23:41 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.4ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 15:26:08 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.6ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/spam_emails" for 127.0.0.1 at 2018-11-29 15:26:13 -0600
+Processing by SpamEmailsController#create as */*
+  Parameters: {"info"=>{"spam_email"=>"someone@something.com", "type"=>"FBI/CIA/IRS Arrest Warrant", "massage"=>" Dear Sir or Madame,\n    since your transaction of $1M USD has fallen through, the FBI has issued a warrant for your arrest for fradulent fund abuse(?) You need to act fast or agents will descend onto your household and destroy all your fine china. You wouldn't want that would you?\n\n    Oh yeah, CIA also has a hit out on you because they can't be one-up'ed by the FBI. There's no telling what might happen. Please wire money to Flatiron. The got hackers there that can help you out. Please see the following for more INFO\n\n    <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n\n    You have 48 hours before the ninjas come get you.", "num_emails"=>"1"}, "spam_email"=>{}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://localhost:3000)
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 3.3ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.1) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.1) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.1) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.1) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.1) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 15:28:48 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.4ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 24ms (Views: 10.3ms | ActiveRecord: 7.4ms)
+
+
+Started POST "/spam_emails" for 127.0.0.1 at 2018-11-29 15:28:53 -0600
+Processing by SpamEmailsController#create as */*
+  Parameters: {"spam_email"=>{"spam_email"=>"someone@something.com", "type"=>"Lucky Winner", "massage"=>" CONTRATULATIONS!!!\n\n  You won a all-paid-for vacation package to Unspecifiedistan ($300,000,000,000 value! Wow!) Please send Name, Address, CC#, SS#, to <a href='spam-jam.herokuapp.com/bam'>JeezusChrist@HowGullible.com </a>\n\n  You have 5 hours to redeem this amazing offer before it gets handed down to the next lucky winner! Act fast! Here in unspecifiedistan we have purely unadultured views of the desert mountain ranges! Come enjoy an unlimited buffet of white truffle, gold flakes, and caviar. The roalty, yes. Such a good offer. would be a shame if you missed out. All you have to do is provide the info mentioned above but most importantly\n\n    CREDIT CARD INFO\n    SOCIAL SECURITY\n\n  We need this info to guarantee your safety.\n\n  - Ug lee\n  Administration Consultant Guru\n  999-99-99999-9-92 Uganda\n  how you write these addresses", "num_emails"=>"1"}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://localhost:3000)
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.1) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.1) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.1) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.1) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.1) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 15:31:42 -0600
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/disalvo/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.8ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 30ms (Views: 9.3ms | ActiveRecord: 9.1ms)
+
+
+Started POST "/spam_emails" for 127.0.0.1 at 2018-11-29 15:31:47 -0600
+Processing by SpamEmailsController#create as */*
+  Parameters: {"spam_email"=>{"spam_email"=>"someone@something.com", "type"=>"Lucky Winner", "massage"=>" CONTRATULATIONS!!!\n\n  You won a all-paid-for vacation package to Unspecifiedistan ($300,000,000,000 value! Wow!) Please send Name, Address, CC#, SS#, to <a href='spam-jam.herokuapp.com/bam'>JeezusChrist@HowGullible.com </a>\n\n  You have 5 hours to redeem this amazing offer before it gets handed down to the next lucky winner! Act fast! Here in unspecifiedistan we have purely unadultured views of the desert mountain ranges! Come enjoy an unlimited buffet of white truffle, gold flakes, and caviar. The roalty, yes. Such a good offer. would be a shame if you missed out. All you have to do is provide the info mentioned above but most importantly\n\n    CREDIT CARD INFO\n    SOCIAL SECURITY\n\n  We need this info to guarantee your safety.\n\n  - Ug lee\n  Administration Consultant Guru\n  999-99-99999-9-92 Uganda\n  how you write these addresses", "num_emails"=>"1"}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://localhost:3000)
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.1) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.1) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.1) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.1) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.1) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 15:35:18 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (1.5ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/spam_emails" for 127.0.0.1 at 2018-11-29 15:35:26 -0600
+Processing by SpamEmailsController#create as */*
+  Parameters: {"spam_email"=>{"spam_email"=>"someone@something.com", "type"=>"Social Media Expert", "massage"=>" Hey\n  I am called Scott and I specialize in Social network engagement marketing which helps to increase business and can give your facebook page a wow factor. I've emailed you just to let you know I have some very special deals on currently which ust might interest you as a business.\n\n  <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n  I help gain facebook likes and Twitter followers for business as a way to start increasing profits and immersion through social engagement. If a new client logs onto facebook or social media and sees that you have 23500000 likes over your competition's paltry 300, they will more likely throw money at you. This works for nearly any industry: Business, Marketing, Animation, Arson, Starving-Children, etc. As you can see by my credentials I'm 100% trustworthy and can make the changes your company needs. I will establish your brand as a trusted source.", "num_emails"=>"1"}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://localhost:3000)
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.1) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.1) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.1) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.1) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.1) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/spam_emails" for 127.0.0.1 at 2018-11-29 15:38:07 -0600
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/disalvo/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by SpamEmailsController#create as */*
+  Parameters: {"spam_email"=>{"spam_email"=>"someone@something.com", "type"=>"Social Media Expert", "massage"=>" Hey\n  I am called Scott and I specialize in Social network engagement marketing which helps to increase business and can give your facebook page a wow factor. I've emailed you just to let you know I have some very special deals on currently which ust might interest you as a business.\n\n  <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n  I help gain facebook likes and Twitter followers for business as a way to start increasing profits and immersion through social engagement. If a new client logs onto facebook or social media and sees that you have 23500000 likes over your competition's paltry 300, they will more likely throw money at you. This works for nearly any industry: Business, Marketing, Animation, Arson, Starving-Children, etc. As you can see by my credentials I'm 100% trustworthy and can make the changes your company needs. I will establish your brand as a trusted source.", "num_emails"=>"1"}}
+HTTP Origin header (http://localhost:3001) didn't match request.base_url (http://localhost:3000)
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.1) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.1) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.1) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.1) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.1) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.1) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.1) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.1) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.5) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 15:38:49 -0600
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/disalvo/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (1.0ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 32ms (Views: 8.7ms | ActiveRecord: 9.4ms)
+
+
+Started POST "/spam_emails" for 127.0.0.1 at 2018-11-29 15:38:53 -0600
+Processing by SpamEmailsController#create as */*
+  Parameters: {"spam_email"=>{"spam_email"=>"someone@something.com", "type"=>"Lucky Winner", "massage"=>" CONTRATULATIONS!!!\n\n  You won a all-paid-for vacation package to Unspecifiedistan ($300,000,000,000 value! Wow!) Please send Name, Address, CC#, SS#, to <a href='spam-jam.herokuapp.com/bam'>JeezusChrist@HowGullible.com </a>\n\n  You have 5 hours to redeem this amazing offer before it gets handed down to the next lucky winner! Act fast! Here in unspecifiedistan we have purely unadultured views of the desert mountain ranges! Come enjoy an unlimited buffet of white truffle, gold flakes, and caviar. The roalty, yes. Such a good offer. would be a shame if you missed out. All you have to do is provide the info mentioned above but most importantly\n\n    CREDIT CARD INFO\n    SOCIAL SECURITY\n\n  We need this info to guarantee your safety.\n\n  - Ug lee\n  Administration Consultant Guru\n  999-99-99999-9-92 Uganda\n  how you write these addresses", "num_emails"=>"1"}}
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 15:41:13 -0600
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 15:41:13 -0600
+Completed 500 Internal Server Error in 140086ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/spam_emails_controller.rb:35:in `create'
+Processing by SpamTypesController#index as */*
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (2.4ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 68ms (Views: 60.0ms | ActiveRecord: 2.4ms)
+
+
+  [1m[36mSpamType Load (89.0ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 156ms (Views: 62.5ms | ActiveRecord: 89.0ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 15:41:32 -0600
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/disalvo/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.8ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 32ms (Views: 9.3ms | ActiveRecord: 8.8ms)
+
+
+Started POST "/spam_emails" for 127.0.0.1 at 2018-11-29 15:41:36 -0600
+Processing by SpamEmailsController#create as */*
+  Parameters: {"spam_email"=>"someone@something.com", "type"=>"FBI/CIA/IRS Arrest Warrant", "contents"=>" Dear Sir or Madame,\n    since your transaction of $1M USD has fallen through, the FBI has issued a warrant for your arrest for fradulent fund abuse(?) You need to act fast or agents will descend onto your household and destroy all your fine china. You wouldn't want that would you?\n\n    Oh yeah, CIA also has a hit out on you because they can't be one-up'ed by the FBI. There's no telling what might happen. Please wire money to Flatiron. The got hackers there that can help you out. Please see the following for more INFO\n\n    <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n\n    You have 48 hours before the ninjas come get you.", "num_emails"=>"1"}
+  [1m[36mSpamType Load (13.4ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/spam_emails_controller.rb:35
+  [1m[36mSpamType Load (0.4ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mSpamType Load (21.2ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."type" = $1 LIMIT $2[0m  [["type", "FBI/CIA/IRS Arrest Warrant"], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mSpamType Load (72.4ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."type" = $1 LIMIT $2[0m  [["type", "FBI/CIA/IRS Arrest Warrant"], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mSpamType Load (0.7ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."name" = $1 LIMIT $2[0m  [["name", "FBI/CIA/IRS Arrest Warrant"], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[35m (5.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ (byebug):1
+  [1m[36mVictim Create (35.9ms)[0m  [1m[32mINSERT INTO "victims" ("real_email", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["real_email", "someone@something.com"], ["created_at", "2018-11-29 21:49:45.876003"], ["updated_at", "2018-11-29 21:49:45.876003"]]
+  ↳ (byebug):1
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ (byebug):1
+  [1m[36mSpamType Load (36.3ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."name" = $1 LIMIT $2[0m  [["name", "FBI/CIA/IRS Arrest Warrant"], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ (byebug):1
+  [1m[36mUser Load (17.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mVictim Load (0.4ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mSpamType Load (0.2ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mSpamEmail Create (10.2ms)[0m  [1m[32mINSERT INTO "spam_emails" ("contents", "user_id", "victim_id", "spam_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["contents", " Dear Sir or Madame,\n    since your transaction of $1M USD has fallen through, the FBI has issued a warrant for your arrest for fradulent fund abuse(?) You need to act fast or agents will descend onto your household and destroy all your fine china. You wouldn't want that would you?\n\n    Oh yeah, CIA also has a hit out on you because they can't be one-up'ed by the FBI. There's no telling what might happen. Please wire money to Flatiron. The got hackers there that can help you out. Please see the following for more INFO\n\n    <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n\n    You have 48 hours before the ninjas come get you."], ["user_id", 1], ["victim_id", 5], ["spam_type_id", 3], ["created_at", "2018-11-29 21:54:59.973953"], ["updated_at", "2018-11-29 21:54:59.973953"]]
+  ↳ (byebug):1
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ (byebug):1
+Completed 404 Not Found in 1117187ms (ActiveRecord: 239.3ms)
+
+
+  
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 16:00:13 -0600
+ActiveRecord::RecordNotFound (Couldn't find SpamType without an ID):
+  
+app/controllers/spam_emails_controller.rb:35:in `create'
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 16:00:13 -0600
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 16:00:24 -0600
+Processing by SpamTypesController#index as */*
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.4ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 19ms (Views: 13.4ms | ActiveRecord: 0.5ms)
+
+
+Completed 200 OK in 25ms (Views: 2.9ms | ActiveRecord: 17.0ms)
+
+
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.7ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 24ms (Views: 9.6ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 16:00:49 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 16:19:12 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (15.6ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 19ms (Views: 3.1ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 16:20:18 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.6ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 16:20:43 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.8ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 16:22:37 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (4.7ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 8ms (Views: 2.9ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 16:28:25 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (1.4ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 16:29:19 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 16:32:39 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.6ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 16:33:43 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.4ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 16:33:56 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (2.2ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 16:34:03 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (4.5ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 8ms (Views: 3.1ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 16:34:17 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (25.6ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 30ms (Views: 4.1ms | ActiveRecord: 25.6ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 16:36:48 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 16:36:53 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.9ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 16:37:35 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.6ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 16:37:41 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (12.8ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 18ms (Views: 4.7ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 16:37:55 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-29 17:12:05 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (1.4ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/spam_emails" for 127.0.0.1 at 2018-11-29 17:12:31 -0600
+Processing by SpamEmailsController#create as */*
+  Parameters: {"spam_email"=>"someone@something.com", "type"=>"FBI/CIA/IRS Arrest Warrant", "contents"=>" Dear Sir or Madame,\n    since your transaction of $1M USD has fallen through, the FBI has issued a warrant for your arrest for fradulent fund abuse(?) You need to act fast or agents will descend onto your household and destroy all your fine china. You wouldn't want that would you?\n\n    Oh yeah, CIA also has a hit out on you because they can't be one-up'ed by the FBI. There's no telling what might happen. Please wire money to Flatiron. The got hackers there that can help you out. Please see the following for more INFO\n\n    <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n\n    You have 48 hours before the ninjas come get you.", "num_emails"=>"1"}
+  [1m[36mSpamType Load (0.3ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."name" = $1 LIMIT $2[0m  [["name", "FBI/CIA/IRS Arrest Warrant"], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/spam_emails_controller.rb:37
+  [1m[36mVictim Create (3.5ms)[0m  [1m[32mINSERT INTO "victims" ("real_email", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["real_email", "someone@something.com"], ["created_at", "2018-11-29 23:12:40.059225"], ["updated_at", "2018-11-29 23:12:40.059225"]]
+  ↳ app/controllers/spam_emails_controller.rb:37
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/spam_emails_controller.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[36mVictim Load (0.9ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[36mSpamType Load (0.3ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[36mSpamEmail Create (2.9ms)[0m  [1m[32mINSERT INTO "spam_emails" ("contents", "user_id", "victim_id", "spam_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["contents", " Dear Sir or Madame,\n    since your transaction of $1M USD has fallen through, the FBI has issued a warrant for your arrest for fradulent fund abuse(?) You need to act fast or agents will descend onto your household and destroy all your fine china. You wouldn't want that would you?\n\n    Oh yeah, CIA also has a hit out on you because they can't be one-up'ed by the FBI. There's no telling what might happen. Please wire money to Flatiron. The got hackers there that can help you out. Please see the following for more INFO\n\n    <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n\n    You have 48 hours before the ninjas come get you."], ["user_id", 1], ["victim_id", 6], ["spam_type_id", 3], ["created_at", "2018-11-29 23:12:40.109574"], ["updated_at", "2018-11-29 23:12:40.109574"]]
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/spam_emails_controller.rb:43
+Completed 500 Internal Server Error in 8785ms (ActiveRecord: 36.2ms)
+
+
+  
+NoMethodError (undefined method `respond_to' for #<SpamEmailsController:0x007fe78f39c050>
+Did you mean?  respond_to?):
+  
+app/controllers/spam_emails_controller.rb:48:in `create'
