@@ -1837,3 +1837,399 @@ Processing by SpamTypesController#index as */*
 Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 16:23:42 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (1.1ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 16:24:12 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (2.1ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 16:25:43 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.7ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/spam_emails" for 127.0.0.1 at 2018-11-30 16:26:11 -0600
+Processing by SpamEmailsController#create as */*
+  Parameters: {"spam_email"=>"someone@something.com", "type"=>"Lucky Winner", "contents"=>" CONTRATULATIONS!!!\n\n  You won a all-paid-for vacation package to Unspecifiedistan ($300,000,000,000 value! Wow!) Please send Name, Address, CC#, SS#, to <a href='spam-jam.herokuapp.com/bam'>JeezusChrist@HowGullible.com </a>\n\n  You have 5 hours to redeem this amazing offer before it gets handed down to the next lucky winner! Act fast! Here in unspecifiedistan we have purely unadultured views of the desert mountain ranges! Come enjoy an unlimited buffet of white truffle, gold flakes, and caviar. The roalty, yes. Such a good offer. would be a shame if you missed out. All you have to do is provide the info mentioned above but most importantly\n\n    CREDIT CARD INFO\n    SOCIAL SECURITY\n\n  We need this info to guarantee your safety.\n\n  - Ug lee\n  Administration Consultant Guru\n  999-99-99999-9-92 Uganda\n  how you write these addresses", "num_emails"=>"1"}
+Completed 500 Internal Server Error in 86316ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/spam_emails_controller.rb:35:in `create'
+Started POST "/spam_emails" for 127.0.0.1 at 2018-11-30 16:37:04 -0600
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 16:37:04 -0600
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/disalvo/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  ↳ /Users/disalvo/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by SpamEmailsController#create as */*
+Processing by SpamTypesController#index as */*
+  Parameters: {"spam_email"=>"someone@something.com", "type"=>"Lucky Winner", "contents"=>" CONTRATULATIONS!!!\n\n  You won a all-paid-for vacation package to Unspecifiedistan ($300,000,000,000 value! Wow!) Please send Name, Address, CC#, SS#, to <a href='spam-jam.herokuapp.com/bam'>JeezusChrist@HowGullible.com </a>\n\n  You have 5 hours to redeem this amazing offer before it gets handed down to the next lucky winner! Act fast! Here in unspecifiedistan we have purely unadultured views of the desert mountain ranges! Come enjoy an unlimited buffet of white truffle, gold flakes, and caviar. The roalty, yes. Such a good offer. would be a shame if you missed out. All you have to do is provide the info mentioned above but most importantly\n\n    CREDIT CARD INFO\n    SOCIAL SECURITY\n\n  We need this info to guarantee your safety.\n\n  - Ug lee\n  Administration Consultant Guru\n  999-99-99999-9-92 Uganda\n  how you write these addresses", "num_emails"=>"1"}
+  [1m[36mSpamType Load (2.2ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+  [1m[36mSpamType Load (29.6ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."name" = $1 LIMIT $2[0m  [["name", "Lucky Winner"], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:35
+Completed 200 OK in 41347ms (Views: 40.9ms | ActiveRecord: 37.7ms)
+
+
+  [1m[35m (12.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/spam_emails_controller.rb:37
+  [1m[36mVictim Create (8.4ms)[0m  [1m[32mINSERT INTO "victims" ("real_email", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["real_email", "someone@something.com"], ["created_at", "2018-11-30 22:37:45.992635"], ["updated_at", "2018-11-30 22:37:45.992635"]]
+  ↳ app/controllers/spam_emails_controller.rb:37
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/spam_emails_controller.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[36mVictim Load (0.6ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[36mSpamType Load (0.3ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[36mSpamEmail Create (12.6ms)[0m  [1m[32mINSERT INTO "spam_emails" ("contents", "user_id", "victim_id", "spam_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["contents", " CONTRATULATIONS!!!\n\n  You won a all-paid-for vacation package to Unspecifiedistan ($300,000,000,000 value! Wow!) Please send Name, Address, CC#, SS#, to <a href='spam-jam.herokuapp.com/bam'>JeezusChrist@HowGullible.com </a>\n\n  You have 5 hours to redeem this amazing offer before it gets handed down to the next lucky winner! Act fast! Here in unspecifiedistan we have purely unadultured views of the desert mountain ranges! Come enjoy an unlimited buffet of white truffle, gold flakes, and caviar. The roalty, yes. Such a good offer. would be a shame if you missed out. All you have to do is provide the info mentioned above but most importantly\n\n    CREDIT CARD INFO\n    SOCIAL SECURITY\n\n  We need this info to guarantee your safety.\n\n  - Ug lee\n  Administration Consultant Guru\n  999-99-99999-9-92 Uganda\n  how you write these addresses"], ["user_id", 1], ["victim_id", 7], ["spam_type_id", 2], ["created_at", "2018-11-30 22:37:46.055547"], ["updated_at", "2018-11-30 22:37:46.055547"]]
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/spam_emails_controller.rb:43
+Completed 500 Internal Server Error in 41535ms (ActiveRecord: 118.6ms)
+
+
+  
+NoMethodError (undefined method `respond_to' for #<SpamEmailsController:0x007fd41fbd00b0>
+Did you mean?  respond_to?):
+  
+app/controllers/spam_emails_controller.rb:48:in `create'
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 16:38:03 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (21.0ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 26ms (Views: 4.6ms | ActiveRecord: 21.0ms)
+
+
+Started POST "/spam_emails" for 127.0.0.1 at 2018-11-30 16:38:31 -0600
+Processing by SpamEmailsController#create as */*
+  Parameters: {"spam_email"=>"someone@something.com", "type"=>"Lucky Winner", "contents"=>" CONTRATULATIONS!!!\n\n  You won a all-paid-for vacation package to Unspecifiedistan ($300,000,000,000 value! Wow!) Please send Name, Address, CC#, SS#, to <a href='spam-jam.herokuapp.com/bam'>JeezusChrist@HowGullible.com </a>\n\n  You have 5 hours to redeem this amazing offer before it gets handed down to the next lucky winner! Act fast! Here in unspecifiedistan we have purely unadultured views of the desert mountain ranges! Come enjoy an unlimited buffet of white truffle, gold flakes, and caviar. The roalty, yes. Such a good offer. would be a shame if you missed out. All you have to do is provide the info mentioned above but most importantly\n\n    CREDIT CARD INFO\n    SOCIAL SECURITY\n\n  We need this info to guarantee your safety.\n\n  - Ug lee\n  Administration Consultant Guru\n  999-99-99999-9-92 Uganda\n  how you write these addresses", "num_emails"=>"1", "recaptcha"=>"03ADlfD18_yRL18XoVdmrV5nBDFBMiP86tb7p4PyuDkBFMYZdEImAYaWm3OoaQwdaMclgLQIDqVPd0XvHR-EDdya6ZtaLqXfDies989j85n-aiFzUr6GePEsU0x9zG5LuBm9DRKrlSiI_SIIxiBG0YfYifyDpom5RdTR8KijDzZnIITfFDHeua0ldjt5_Hj1KGrBTDZOqHIBOODfxUU-nVEX__xD_yZwxZFA-R1tVBTiBfLOv8il3_LcILrSi69ByP8GmedLksLebDK7rb4K8wOGs1iuEk7X408A"}
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."name" = $1 LIMIT $2[0m  [["name", "Lucky Winner"], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/spam_emails_controller.rb:37
+  [1m[36mVictim Create (1.0ms)[0m  [1m[32mINSERT INTO "victims" ("real_email", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["real_email", "someone@something.com"], ["created_at", "2018-11-30 22:38:49.421057"], ["updated_at", "2018-11-30 22:38:49.421057"]]
+  ↳ app/controllers/spam_emails_controller.rb:37
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/spam_emails_controller.rb:37
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[36mVictim Load (0.4ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[36mSpamType Load (0.3ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[36mSpamEmail Create (2.7ms)[0m  [1m[32mINSERT INTO "spam_emails" ("contents", "user_id", "victim_id", "spam_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["contents", " CONTRATULATIONS!!!\n\n  You won a all-paid-for vacation package to Unspecifiedistan ($300,000,000,000 value! Wow!) Please send Name, Address, CC#, SS#, to <a href='spam-jam.herokuapp.com/bam'>JeezusChrist@HowGullible.com </a>\n\n  You have 5 hours to redeem this amazing offer before it gets handed down to the next lucky winner! Act fast! Here in unspecifiedistan we have purely unadultured views of the desert mountain ranges! Come enjoy an unlimited buffet of white truffle, gold flakes, and caviar. The roalty, yes. Such a good offer. would be a shame if you missed out. All you have to do is provide the info mentioned above but most importantly\n\n    CREDIT CARD INFO\n    SOCIAL SECURITY\n\n  We need this info to guarantee your safety.\n\n  - Ug lee\n  Administration Consultant Guru\n  999-99-99999-9-92 Uganda\n  how you write these addresses"], ["user_id", 1], ["victim_id", 8], ["spam_type_id", 2], ["created_at", "2018-11-30 22:38:49.436771"], ["updated_at", "2018-11-30 22:38:49.436771"]]
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/spam_emails_controller.rb:43
+Completed 500 Internal Server Error in 18154ms (ActiveRecord: 18.7ms)
+
+
+  
+NoMethodError (undefined method `respond_to' for #<SpamEmailsController:0x007fd41d709920>
+Did you mean?  respond_to?):
+  
+app/controllers/spam_emails_controller.rb:48:in `create'
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 16:38:59 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.7ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/spam_emails" for 127.0.0.1 at 2018-11-30 16:39:05 -0600
+Processing by SpamEmailsController#create as */*
+  Parameters: {"spam_email"=>"someone@something.com", "type"=>"FBI/CIA/IRS Arrest Warrant", "contents"=>" Dear Sir or Madame,\n    since your transaction of $1M USD has fallen through, the FBI has issued a warrant for your arrest for fradulent fund abuse(?) You need to act fast or agents will descend onto your household and destroy all your fine china. You wouldn't want that would you?\n\n    Oh yeah, CIA also has a hit out on you because they can't be one-up'ed by the FBI. There's no telling what might happen. Please wire money to Flatiron. The got hackers there that can help you out. Please see the following for more INFO\n\n    <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n\n    You have 48 hours before the ninjas come get you.", "num_emails"=>"1", "recaptcha"=>""}
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 16:40:44 -0600
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 16:40:44 -0600
+  [1m[36mSpamType Load (2.4ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."name" = $1 LIMIT $2[0m  [["name", "FBI/CIA/IRS Arrest Warrant"], ["LIMIT", 1]]
+Processing by SpamTypesController#index as */*
+  ↳ app/controllers/spam_emails_controller.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSpamType Load (1.0ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_emails_controller.rb:37
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mVictim Create (2.5ms)[0m  [1m[32mINSERT INTO "victims" ("real_email", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["real_email", "someone@something.com"], ["created_at", "2018-11-30 22:40:44.306543"], ["updated_at", "2018-11-30 22:40:44.306543"]]
+  ↳ app/controllers/spam_emails_controller.rb:37
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/spam_emails_controller.rb:37
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[36mVictim Load (0.5ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[36mSpamType Load (0.4ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[36mSpamEmail Create (2.3ms)[0m  [1m[32mINSERT INTO "spam_emails" ("contents", "user_id", "victim_id", "spam_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["contents", " Dear Sir or Madame,\n    since your transaction of $1M USD has fallen through, the FBI has issued a warrant for your arrest for fradulent fund abuse(?) You need to act fast or agents will descend onto your household and destroy all your fine china. You wouldn't want that would you?\n\n    Oh yeah, CIA also has a hit out on you because they can't be one-up'ed by the FBI. There's no telling what might happen. Please wire money to Flatiron. The got hackers there that can help you out. Please see the following for more INFO\n\n    <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n\n    You have 48 hours before the ninjas come get you."], ["user_id", 1], ["victim_id", 9], ["spam_type_id", 3], ["created_at", "2018-11-30 22:40:44.325407"], ["updated_at", "2018-11-30 22:40:44.325407"]]
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/spam_emails_controller.rb:43
+Completed 500 Internal Server Error in 98592ms (ActiveRecord: 16.4ms)
+
+
+  
+NoMethodError (undefined method `respond_to' for #<SpamEmailsController:0x007fd423997678>
+Did you mean?  respond_to?):
+  
+app/controllers/spam_emails_controller.rb:48:in `create'
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (1.8ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 16:40:50 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/spam_emails" for 127.0.0.1 at 2018-11-30 16:42:21 -0600
+Processing by SpamEmailsController#create as */*
+  Parameters: {"spam_email"=>"someone@something.com", "type"=>"Social Media Expert", "contents"=>" Hey\n  I am called Scott and I specialize in Social network engagement marketing which helps to increase business and can give your facebook page a wow factor. I've emailed you just to let you know I have some very special deals on currently which ust might interest you as a business.\n\n  <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n  I help gain facebook likes and Twitter followers for business as a way to start increasing profits and immersion through social engagement. If a new client logs onto facebook or social media and sees that you have 23500000 likes over your competition's paltry 300, they will more likely throw money at you. This works for nearly any industry: Business, Marketing, Animation, Arson, Starving-Children, etc. As you can see by my credentials I'm 100% trustworthy and can make the changes your company needs. I will establish your brand as a trusted source.", "num_emails"=>"1", "recaptcha"=>"03ADlfD183oy0CBAT9HzYV1O1gnpNOcMrwCTPKRkArtzeJfU2xqDiSqIblCW0ryHxCncq9F5mSG4q9RRRIddeSBjRLOYfaRZTjMFKNAfeGKlSj9yWOrp6Nw7mMft-l6jvIQzV86neyMiU5itfqzgQ7VwXl6lp_6j7hgHJNo1hOl2hOWH7onUlCNJ7THz3kwUcBpQzDx1DelS11WqbhHKg9ibTUQCkMq-lSHHaxh0LGXu71jB8ZFu0xJlNOv-rlffZZHAkK_aQbF69y-0Vf-I_SVKCqedjCN7A22A"}
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 16:42:45 -0600
+  [1m[36mSpamType Load (0.4ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."name" = $1 LIMIT $2[0m  [["name", "Social Media Expert"], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/spam_emails_controller.rb:37
+  [1m[36mVictim Create (0.9ms)[0m  [1m[32mINSERT INTO "victims" ("real_email", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["real_email", "someone@something.com"], ["created_at", "2018-11-30 22:42:45.302563"], ["updated_at", "2018-11-30 22:42:45.302563"]]
+  ↳ app/controllers/spam_emails_controller.rb:37
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/spam_emails_controller.rb:37
+  [1m[35m (56.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[36mVictim Load (0.4ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[36mSpamType Load (0.3ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[36mSpamEmail Create (1.7ms)[0m  [1m[32mINSERT INTO "spam_emails" ("contents", "user_id", "victim_id", "spam_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["contents", " Hey\n  I am called Scott and I specialize in Social network engagement marketing which helps to increase business and can give your facebook page a wow factor. I've emailed you just to let you know I have some very special deals on currently which ust might interest you as a business.\n\n  <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n  I help gain facebook likes and Twitter followers for business as a way to start increasing profits and immersion through social engagement. If a new client logs onto facebook or social media and sees that you have 23500000 likes over your competition's paltry 300, they will more likely throw money at you. This works for nearly any industry: Business, Marketing, Animation, Arson, Starving-Children, etc. As you can see by my credentials I'm 100% trustworthy and can make the changes your company needs. I will establish your brand as a trusted source."], ["user_id", 1], ["victim_id", 10], ["spam_type_id", 1], ["created_at", "2018-11-30 22:42:45.420656"], ["updated_at", "2018-11-30 22:42:45.420656"]]
+  ↳ app/controllers/spam_emails_controller.rb:43
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/spam_emails_controller.rb:43
+Completed 500 Internal Server Error in 24054ms (ActiveRecord: 105.1ms)
+
+
+  
+NoMethodError (undefined method `respond_to' for #<SpamEmailsController:0x007fd41d720c60>
+Did you mean?  respond_to?):
+  
+app/controllers/spam_emails_controller.rb:48:in `create'
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.4ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 16ms (Views: 6.1ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 16:42:50 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (1.4ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/spam_emails" for 127.0.0.1 at 2018-11-30 16:43:07 -0600
+Processing by SpamEmailsController#create as */*
+  Parameters: {"spam_email"=>"angela.disalvo@gmail.com", "type"=>"Social Media Expert", "contents"=>" Hey\n  I am called Scott and I specialize in Social network engagement marketing which helps to increase business and can give your facebook page a wow factor. I've emailed you just to let you know I have some very special deals on currently which ust might interest you as a business.\n\n  <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n  I help gain facebook likes and Twitter followers for business as a way to start increasing profits and immersion through social engagement. If a new client logs onto facebook or social media and sees that you have 23500000 likes over your competition's paltry 300, they will more likely throw money at you. This works for nearly any industry: Business, Marketing, Animation, Arson, Starving-Children, etc. As you can see by my credentials I'm 100% trustworthy and can make the changes your company needs. I will establish your brand as a trusted source.", "num_emails"=>"2"}
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."name" = $1 LIMIT $2[0m  [["name", "Social Media Expert"], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:34
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/spam_emails_controller.rb:36
+  [1m[36mVictim Create (5.6ms)[0m  [1m[32mINSERT INTO "victims" ("real_email", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["real_email", "angela.disalvo@gmail.com"], ["created_at", "2018-11-30 22:43:08.026205"], ["updated_at", "2018-11-30 22:43:08.026205"]]
+  ↳ app/controllers/spam_emails_controller.rb:36
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/spam_emails_controller.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mVictim Load (0.4ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mSpamType Load (0.6ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mSpamEmail Create (1.3ms)[0m  [1m[32mINSERT INTO "spam_emails" ("contents", "user_id", "victim_id", "spam_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["contents", " Hey\n  I am called Scott and I specialize in Social network engagement marketing which helps to increase business and can give your facebook page a wow factor. I've emailed you just to let you know I have some very special deals on currently which ust might interest you as a business.\n\n  <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n  I help gain facebook likes and Twitter followers for business as a way to start increasing profits and immersion through social engagement. If a new client logs onto facebook or social media and sees that you have 23500000 likes over your competition's paltry 300, they will more likely throw money at you. This works for nearly any industry: Business, Marketing, Animation, Arson, Starving-Children, etc. As you can see by my credentials I'm 100% trustworthy and can make the changes your company needs. I will establish your brand as a trusted source."], ["user_id", 1], ["victim_id", 11], ["spam_type_id", 1], ["created_at", "2018-11-30 22:43:08.074668"], ["updated_at", "2018-11-30 22:43:08.074668"]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mVictim Load (0.4ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mSpamType Load (0.3ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mSpamEmail Create (0.7ms)[0m  [1m[32mINSERT INTO "spam_emails" ("contents", "user_id", "victim_id", "spam_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["contents", " Hey\n  I am called Scott and I specialize in Social network engagement marketing which helps to increase business and can give your facebook page a wow factor. I've emailed you just to let you know I have some very special deals on currently which ust might interest you as a business.\n\n  <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n  I help gain facebook likes and Twitter followers for business as a way to start increasing profits and immersion through social engagement. If a new client logs onto facebook or social media and sees that you have 23500000 likes over your competition's paltry 300, they will more likely throw money at you. This works for nearly any industry: Business, Marketing, Animation, Arson, Starving-Children, etc. As you can see by my credentials I'm 100% trustworthy and can make the changes your company needs. I will establish your brand as a trusted source."], ["user_id", 1], ["victim_id", 11], ["spam_type_id", 1], ["created_at", "2018-11-30 22:43:08.085424"], ["updated_at", "2018-11-30 22:43:08.085424"]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/spam_emails_controller.rb:42
+Completed 500 Internal Server Error in 193ms (ActiveRecord: 35.5ms)
+
+
+  
+NoMethodError (undefined method `respond_to' for #<SpamEmailsController:0x007fd41d6df6c0>
+Did you mean?  respond_to?):
+  
+app/controllers/spam_emails_controller.rb:47:in `create'
+Started POST "/spam_emails" for 127.0.0.1 at 2018-11-30 16:45:12 -0600
+Processing by SpamEmailsController#create as */*
+  Parameters: {"spam_email"=>"angela.disalvo@gmail.com", "type"=>"Social Media Expert", "contents"=>" Hey\n  I am called Scott and I specialize in Social network engagement marketing which helps to increase business and can give your facebook page a wow factor. I've emailed you just to let you know I have some very special deals on currently which ust might interest you as a business.\n\n  <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n  I help gain facebook likes and Twitter followers for business as a way to start increasing profits and immersion through social engagement. If a new client logs onto facebook or social media and sees that you have 23500000 likes over your competition's paltry 300, they will more likely throw money at you. This works for nearly any industry: Business, Marketing, Animation, Arson, Starving-Children, etc. As you can see by my credentials I'm 100% trustworthy and can make the changes your company needs. I will establish your brand as a trusted source.", "num_emails"=>"2"}
+  [1m[36mSpamType Load (0.4ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."name" = $1 LIMIT $2[0m  [["name", "Social Media Expert"], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:34
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/spam_emails_controller.rb:36
+  [1m[36mVictim Create (0.6ms)[0m  [1m[32mINSERT INTO "victims" ("real_email", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["real_email", "angela.disalvo@gmail.com"], ["created_at", "2018-11-30 22:45:12.970156"], ["updated_at", "2018-11-30 22:45:12.970156"]]
+  ↳ app/controllers/spam_emails_controller.rb:36
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/spam_emails_controller.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mVictim Load (0.4ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mSpamType Load (0.3ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mSpamEmail Create (1.1ms)[0m  [1m[32mINSERT INTO "spam_emails" ("contents", "user_id", "victim_id", "spam_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["contents", " Hey\n  I am called Scott and I specialize in Social network engagement marketing which helps to increase business and can give your facebook page a wow factor. I've emailed you just to let you know I have some very special deals on currently which ust might interest you as a business.\n\n  <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n  I help gain facebook likes and Twitter followers for business as a way to start increasing profits and immersion through social engagement. If a new client logs onto facebook or social media and sees that you have 23500000 likes over your competition's paltry 300, they will more likely throw money at you. This works for nearly any industry: Business, Marketing, Animation, Arson, Starving-Children, etc. As you can see by my credentials I'm 100% trustworthy and can make the changes your company needs. I will establish your brand as a trusted source."], ["user_id", 1], ["victim_id", 12], ["spam_type_id", 1], ["created_at", "2018-11-30 22:45:12.985139"], ["updated_at", "2018-11-30 22:45:12.985139"]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mVictim Load (0.4ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mSpamEmail Create (2.4ms)[0m  [1m[32mINSERT INTO "spam_emails" ("contents", "user_id", "victim_id", "spam_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["contents", " Hey\n  I am called Scott and I specialize in Social network engagement marketing which helps to increase business and can give your facebook page a wow factor. I've emailed you just to let you know I have some very special deals on currently which ust might interest you as a business.\n\n  <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n  I help gain facebook likes and Twitter followers for business as a way to start increasing profits and immersion through social engagement. If a new client logs onto facebook or social media and sees that you have 23500000 likes over your competition's paltry 300, they will more likely throw money at you. This works for nearly any industry: Business, Marketing, Animation, Arson, Starving-Children, etc. As you can see by my credentials I'm 100% trustworthy and can make the changes your company needs. I will establish your brand as a trusted source."], ["user_id", 1], ["victim_id", 12], ["spam_type_id", 1], ["created_at", "2018-11-30 22:45:13.002746"], ["updated_at", "2018-11-30 22:45:13.002746"]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/spam_emails_controller.rb:42
+Completed 500 Internal Server Error in 141ms (ActiveRecord: 19.7ms)
+
+
+  
+NoMethodError (undefined method `respond_to' for #<SpamEmailsController:0x007fd423e185f8>
+Did you mean?  respond_to?):
+  
+app/controllers/spam_emails_controller.rb:47:in `create'
+Started POST "/spam_emails" for 127.0.0.1 at 2018-11-30 16:48:27 -0600
+Processing by SpamEmailsController#create as */*
+  Parameters: {"spam_email"=>"angela.disalvo@gmail.com", "type"=>"Social Media Expert", "contents"=>" Hey\n  I am called Scott and I specialize in Social network engagement marketing which helps to increase business and can give your facebook page a wow factor. I've emailed you just to let you know I have some very special deals on currently which ust might interest you as a business.\n\n  <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n  I help gain facebook likes and Twitter followers for business as a way to start increasing profits and immersion through social engagement. If a new client logs onto facebook or social media and sees that you have 23500000 likes over your competition's paltry 300, they will more likely throw money at you. This works for nearly any industry: Business, Marketing, Animation, Arson, Starving-Children, etc. As you can see by my credentials I'm 100% trustworthy and can make the changes your company needs. I will establish your brand as a trusted source.", "num_emails"=>"2"}
+  [1m[36mSpamType Load (0.3ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."name" = $1 LIMIT $2[0m  [["name", "Social Media Expert"], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:34
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/spam_emails_controller.rb:36
+  [1m[36mVictim Create (0.4ms)[0m  [1m[32mINSERT INTO "victims" ("real_email", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["real_email", "angela.disalvo@gmail.com"], ["created_at", "2018-11-30 22:48:27.359765"], ["updated_at", "2018-11-30 22:48:27.359765"]]
+  ↳ app/controllers/spam_emails_controller.rb:36
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/spam_emails_controller.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mVictim Load (0.3ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mSpamType Load (0.3ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mSpamEmail Create (0.7ms)[0m  [1m[32mINSERT INTO "spam_emails" ("contents", "user_id", "victim_id", "spam_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["contents", " Hey\n  I am called Scott and I specialize in Social network engagement marketing which helps to increase business and can give your facebook page a wow factor. I've emailed you just to let you know I have some very special deals on currently which ust might interest you as a business.\n\n  <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n  I help gain facebook likes and Twitter followers for business as a way to start increasing profits and immersion through social engagement. If a new client logs onto facebook or social media and sees that you have 23500000 likes over your competition's paltry 300, they will more likely throw money at you. This works for nearly any industry: Business, Marketing, Animation, Arson, Starving-Children, etc. As you can see by my credentials I'm 100% trustworthy and can make the changes your company needs. I will establish your brand as a trusted source."], ["user_id", 1], ["victim_id", 13], ["spam_type_id", 1], ["created_at", "2018-11-30 22:48:27.371726"], ["updated_at", "2018-11-30 22:48:27.371726"]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mVictim Load (0.2ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mSpamType Load (0.2ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mSpamEmail Create (0.6ms)[0m  [1m[32mINSERT INTO "spam_emails" ("contents", "user_id", "victim_id", "spam_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["contents", " Hey\n  I am called Scott and I specialize in Social network engagement marketing which helps to increase business and can give your facebook page a wow factor. I've emailed you just to let you know I have some very special deals on currently which ust might interest you as a business.\n\n  <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n  I help gain facebook likes and Twitter followers for business as a way to start increasing profits and immersion through social engagement. If a new client logs onto facebook or social media and sees that you have 23500000 likes over your competition's paltry 300, they will more likely throw money at you. This works for nearly any industry: Business, Marketing, Animation, Arson, Starving-Children, etc. As you can see by my credentials I'm 100% trustworthy and can make the changes your company needs. I will establish your brand as a trusted source."], ["user_id", 1], ["victim_id", 13], ["spam_type_id", 1], ["created_at", "2018-11-30 22:48:27.377778"], ["updated_at", "2018-11-30 22:48:27.377778"]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/spam_emails_controller.rb:42
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 10.5ms)
+
+
+  
+NoMethodError (undefined method `respond_to' for #<SpamEmailsController:0x007fd41de3ad98>
+Did you mean?  respond_to?):
+  
+app/controllers/spam_emails_controller.rb:47:in `create'
+Started POST "/spam_emails" for 127.0.0.1 at 2018-11-30 16:52:26 -0600
+Processing by SpamEmailsController#create as */*
+  Parameters: {"spam_email"=>"angela.disalvo@gmail.com", "type"=>"Social Media Expert", "contents"=>" Hey\n  I am called Scott and I specialize in Social network engagement marketing which helps to increase business and can give your facebook page a wow factor. I've emailed you just to let you know I have some very special deals on currently which ust might interest you as a business.\n\n  <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n  I help gain facebook likes and Twitter followers for business as a way to start increasing profits and immersion through social engagement. If a new client logs onto facebook or social media and sees that you have 23500000 likes over your competition's paltry 300, they will more likely throw money at you. This works for nearly any industry: Business, Marketing, Animation, Arson, Starving-Children, etc. As you can see by my credentials I'm 100% trustworthy and can make the changes your company needs. I will establish your brand as a trusted source.", "num_emails"=>"2"}
+  [1m[36mSpamType Load (0.4ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."name" = $1 LIMIT $2[0m  [["name", "Social Media Expert"], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:34
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/spam_emails_controller.rb:36
+  [1m[36mVictim Create (0.6ms)[0m  [1m[32mINSERT INTO "victims" ("real_email", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["real_email", "angela.disalvo@gmail.com"], ["created_at", "2018-11-30 22:52:26.913573"], ["updated_at", "2018-11-30 22:52:26.913573"]]
+  ↳ app/controllers/spam_emails_controller.rb:36
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/spam_emails_controller.rb:36
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mVictim Load (0.3ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mSpamType Load (0.2ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mSpamEmail Create (0.6ms)[0m  [1m[32mINSERT INTO "spam_emails" ("contents", "user_id", "victim_id", "spam_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["contents", " Hey\n  I am called Scott and I specialize in Social network engagement marketing which helps to increase business and can give your facebook page a wow factor. I've emailed you just to let you know I have some very special deals on currently which ust might interest you as a business.\n\n  <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n  I help gain facebook likes and Twitter followers for business as a way to start increasing profits and immersion through social engagement. If a new client logs onto facebook or social media and sees that you have 23500000 likes over your competition's paltry 300, they will more likely throw money at you. This works for nearly any industry: Business, Marketing, Animation, Arson, Starving-Children, etc. As you can see by my credentials I'm 100% trustworthy and can make the changes your company needs. I will establish your brand as a trusted source."], ["user_id", 1], ["victim_id", 14], ["spam_type_id", 1], ["created_at", "2018-11-30 22:52:27.027296"], ["updated_at", "2018-11-30 22:52:27.027296"]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mVictim Load (0.3ms)[0m  [1m[34mSELECT  "victims".* FROM "victims" WHERE "victims"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mSpamType Load (0.2ms)[0m  [1m[34mSELECT  "spam_types".* FROM "spam_types" WHERE "spam_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[36mSpamEmail Create (0.5ms)[0m  [1m[32mINSERT INTO "spam_emails" ("contents", "user_id", "victim_id", "spam_type_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["contents", " Hey\n  I am called Scott and I specialize in Social network engagement marketing which helps to increase business and can give your facebook page a wow factor. I've emailed you just to let you know I have some very special deals on currently which ust might interest you as a business.\n\n  <a href='spamjam.herokuapp.com/bam'>'See Offers!'</a>\n  I help gain facebook likes and Twitter followers for business as a way to start increasing profits and immersion through social engagement. If a new client logs onto facebook or social media and sees that you have 23500000 likes over your competition's paltry 300, they will more likely throw money at you. This works for nearly any industry: Business, Marketing, Animation, Arson, Starving-Children, etc. As you can see by my credentials I'm 100% trustworthy and can make the changes your company needs. I will establish your brand as a trusted source."], ["user_id", 1], ["victim_id", 14], ["spam_type_id", 1], ["created_at", "2018-11-30 22:52:27.037227"], ["updated_at", "2018-11-30 22:52:27.037227"]]
+  ↳ app/controllers/spam_emails_controller.rb:42
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/spam_emails_controller.rb:42
+Completed 500 Internal Server Error in 245ms (ActiveRecord: 93.9ms)
+
+
+  
+NoMethodError (undefined method `respond_to' for #<SpamEmailsController:0x007fd41d99a888>
+Did you mean?  respond_to?):
+  
+app/controllers/spam_emails_controller.rb:47:in `create'
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 16:52:54 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.6ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.6ms)
+
+

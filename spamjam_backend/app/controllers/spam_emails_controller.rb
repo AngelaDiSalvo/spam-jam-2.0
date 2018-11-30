@@ -31,7 +31,6 @@ class SpamEmailsController < ApplicationController
   end
 
   def create
-    byebug
     @spam_type = SpamType.find_by(name: params[:type])
     # @user = User.create(name: params[:spam_email][:user_name], real_email: params[:spam_email][:user_real_email])
     @victim = Victim.create(real_email: params[:spam_email])
@@ -46,7 +45,8 @@ class SpamEmailsController < ApplicationController
     end#makes sure @num_emails is not nil or 0
 
     respond_to do |format|
-      if @spam_email.valid? && @victim.valid? && verify_recaptcha(model: @spam_email)
+      byebug
+      if @spam_email.valid? && @victim.valid?
         if !@num_emails.nil? #COME BACK HERE
           #do the thing multipunch
           SpamEmailMailer.multipunch(@num_emails,@victim,@spam_email,@user).deliver_now

@@ -56,19 +56,21 @@ class App extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-
-    fetch('http://localhost:3000/spam_emails', {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        spam_email: e.target[0].value,
-        type: e.target[1].value,
-        contents: e.target[2].value,
-        num_emails: e.target[3].value,
+    if (e.target[4].value != "") {
+      fetch('http://localhost:3000/spam_emails', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          spam_email: e.target[0].value,
+          type: e.target[1].value,
+          contents: e.target[2].value,
+          num_emails: e.target[3].value,
+        })
       })
-    })
+    }
+
   }//handleSubmit
 
   render() {
@@ -123,6 +125,7 @@ class App extends Component {
                   ))}
                 </select>
               </div>
+              <br></br>
               <div className="g-recaptcha" data-sitekey={client_id}></div>
               <div>
                 <input type="submit" value="Submit" />
