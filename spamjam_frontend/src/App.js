@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import client_id from './config.js';
+import { client_id } from './config.js';
+import { loadReCaptcha } from 'react-recaptcha-google'
 
 const SPAM_JAM_API_URL = `http://localhost:3000/spam_types`
 
@@ -15,6 +16,7 @@ class App extends Component {
   }//state
 
   componentDidMount() {
+    loadReCaptcha()
     this.getSpamTypes()
   }//componentDidMount
 
@@ -121,7 +123,7 @@ class App extends Component {
                   ))}
                 </select>
               </div>
-              <div className="g-recaptcha" data-sitekey="6Ld47H0UAAAAABTq6SHjV2srR8T13VJboNHQ471_"></div>
+              <div className="g-recaptcha" data-sitekey={client_id}></div>
               <div>
                 <input type="submit" value="Submit" />
               </div>

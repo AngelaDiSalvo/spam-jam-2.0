@@ -1753,3 +1753,87 @@ NoMethodError (undefined method `respond_to' for #<SpamEmailsController:0x007fe7
 Did you mean?  respond_to?):
   
 app/controllers/spam_emails_controller.rb:48:in `create'
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 15:12:48 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (24.5ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 44ms (Views: 14.2ms | ActiveRecord: 24.5ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 15:15:20 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 15:15:27 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.6ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 15:16:55 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (53.9ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 63ms (Views: 8.6ms | ActiveRecord: 53.9ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 15:21:58 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (1.2ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 15:22:31 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.4ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 16:16:30 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (1.5ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 17ms (Views: 14.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 16:16:36 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.5ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 16:17:52 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (6.3ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 21ms (Views: 12.5ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 16:18:45 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (27.3ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 35ms (Views: 6.7ms | ActiveRecord: 27.3ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 16:19:04 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (0.8ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/spam_types" for 127.0.0.1 at 2018-11-30 16:19:26 -0600
+Processing by SpamTypesController#index as */*
+  [1m[36mSpamType Load (1.2ms)[0m  [1m[34mSELECT "spam_types".* FROM "spam_types"[0m
+  ↳ app/controllers/spam_types_controller.rb:6
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 1.2ms)
+
+
